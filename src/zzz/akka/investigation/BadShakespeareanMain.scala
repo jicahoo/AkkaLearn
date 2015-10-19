@@ -4,6 +4,11 @@ package zzz.akka.investigation
 
 import akka.actor.{Actor, Props, ActorSystem}
 
+/**
+ * Ran successfully on:
+ *    akka-actor_2.11-2.4.0
+ *    scala-sdk-2.11.7
+ */
 // Our Actor
 class BadShakespeareanActor extends Actor {
   // The 'Business Logic'

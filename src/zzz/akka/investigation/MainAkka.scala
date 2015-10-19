@@ -4,6 +4,11 @@ import java.util.concurrent.Executors
 import scala.concurrent.duration._
 import scala.concurrent.{Await, Future, ExecutionContext}
 
+/**
+ * Ran successfully on:
+ *    akka-actor_2.11-2.4.0
+ *    scala-sdk-2.11.7
+ */
 object MainAkka {
   val pool = Executors.newCachedThreadPool()
   implicit val ec = ExecutionContext.fromExecutorService(pool)
