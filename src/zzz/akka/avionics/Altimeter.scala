@@ -12,6 +12,9 @@ import scala.concurrent.duration._
 
 import scala.concurrent.ExecutionContext.Implicits.global
 
+/**
+ * @author Jichao
+ */
 object Altimeter {
 
   // Sent to the Altimeter to inform it about a rate of climb changes
