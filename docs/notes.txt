@@ -1,0 +1,11 @@
+1. Not closing over sender:
+
+Page 157:
+When we were looking at Actors before, we saw that closing over the
+sender is not something we want to do, simply because it’s a method that
+returns the current value. If we close over it, then the value returned when
+the closure executes will probably not be what it was when we made the
+closure. Just to be clear, that’s not what’s happening when we schedule the
+Drink response. The second parameter of scheduleOnce() takes a proper
+ActorRef, not a by-name parameter, so the sender is frozen at the point of
+scheduling.
