@@ -42,5 +42,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-#Ignore generated files in build
+#Ignore generated files in build (SBT)
 target/
+
+#Ignore
+.idea
