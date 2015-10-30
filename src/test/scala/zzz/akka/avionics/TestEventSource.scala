@@ -15,7 +15,7 @@ class TestEventSource extends Actor with ProductionEventSource {
 }
 
 // "class"Spec is a decent convention we'll be following
-class EventSourceSpec extends TestKit(ActorSystem("EventSourceSpec"))  with WordSpecLike with MustMatchers with BeforeAndAfterAll {
+class EventSourceSpec extends TestKit(ActorSystem("EventSourceSpec")) with WordSpecLike with MustMatchers with BeforeAndAfterAll {
 
   import EventSource._
 
@@ -24,6 +24,7 @@ class EventSourceSpec extends TestKit(ActorSystem("EventSourceSpec"))  with Word
   }
 
   "EventSource" should {
+
     "allow us to register a listener" in {
       val real = TestActorRef[TestEventSource].underlyingActor
       real.receive(RegisterListener(testActor))
@@ -36,11 +37,14 @@ class EventSourceSpec extends TestKit(ActorSystem("EventSourceSpec"))  with Word
       real.receive(UnregisterListener(testActor))
       real.listeners.size must be(0)
     }
+
     "send the event to our test actor" in {
       val testA = TestActorRef[TestEventSource]
       testA ! RegisterListener(testActor)
       testA.underlyingActor.sendEvent("Fibonacci")
       expectMsg("Fibonacci")
     }
+
   }
+
 }
