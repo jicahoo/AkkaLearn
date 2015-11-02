@@ -28,7 +28,7 @@ object Altimeter {
 }
 
 class Altimeter extends Actor with ActorLogging {
-  this:EventSource=>
+  this : EventSource =>
 
   import Altimeter._
 

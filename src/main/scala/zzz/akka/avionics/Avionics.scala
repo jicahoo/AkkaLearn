@@ -14,6 +14,8 @@ object Avionics {
   val system = ActorSystem("PlaneSimulation")
   val plane = system.actorOf(Props[Plane], "Plane")
 
+  println(plane.path)
+
   def main(args: Array[String]) {
     // Grab the controls
     val control = Await.result( (plane ? Plane.GiveMeControl).mapTo[ActorRef], 5.seconds)
