@@ -5,8 +5,6 @@ import akka.testkit.{TestKit, TestActorRef, ImplicitSender}
 import org.scalatest.{Matchers, WordSpecLike, WordSpec, BeforeAndAfterAll}
 import org.scalatest.matchers.MustMatchers
 
-trait MyWordSpecTrait extends WordSpec
-
 // We can't test a "trait" very easily, so we're going to create a specific
 // EventSource derivation that conforms to the requirements of the trait so
 // that we can test the production code.

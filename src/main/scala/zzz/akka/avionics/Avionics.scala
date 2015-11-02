@@ -14,7 +14,11 @@ object Avionics {
   val system = ActorSystem("PlaneSimulation")
   val plane = system.actorOf(Props[Plane], "Plane")
 
-  println(plane.path)
+  //Path concept of actor
+  println("Actor path: "+plane.path)
+  println("Actor name: "+plane.path.name)
+
+  //Parent of actor?
 
   def main(args: Array[String]) {
     // Grab the controls
